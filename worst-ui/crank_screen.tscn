@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://dkkiw6gu3w3eb"]
+
+[ext_resource type="Texture2D" uid="uid://b4klemppldgtw" path="res://icon.svg" id="1_e5g61"]
+[ext_resource type="Script" uid="uid://dson47fmnfeys" path="res://crank.gd" id="1_teofh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_teofh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uofxb"]
+radius = 159.66527
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fd308"]
+radius = 126.01587
+
+[node name="Crank Screen" type="Node2D"]
+
+[node name="Crank" type="CharacterBody2D" parent="."]
+visible = false
+script = ExtResource("1_teofh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crank"]
+shape = SubResource("CircleShape2D_teofh")
+
+[node name="Sprite2D" type="Sprite2D" parent="Crank"]
+texture = ExtResource("1_e5g61")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_uofxb")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource("CircleShape2D_fd308")
+
+[node name="Camera2D" type="Camera2D" parent="."]
