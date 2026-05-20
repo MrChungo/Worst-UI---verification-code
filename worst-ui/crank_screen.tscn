@@ -14,8 +14,8 @@ radius = 126.01587
 [node name="Crank Screen" type="Node2D"]
 
 [node name="Crank" type="CharacterBody2D" parent="."]
-visible = false
 script = ExtResource("1_teofh")
+speed = 200.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crank"]
 shape = SubResource("CircleShape2D_teofh")
