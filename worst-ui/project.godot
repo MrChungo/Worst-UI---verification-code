@@ -14,3 +14,7 @@ config/name="Worst UI"
 run/main_scene="uid://wk7lluxt0e20"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://global.gd"
