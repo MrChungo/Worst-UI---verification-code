@@ -1,19 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://dkkiw6gu3w3eb"]
+[gd_scene load_steps=4 format=3 uid="uid://dkkiw6gu3w3eb"]
 
 [ext_resource type="Texture2D" uid="uid://b4klemppldgtw" path="res://icon.svg" id="1_e5g61"]
 [ext_resource type="Script" uid="uid://dson47fmnfeys" path="res://crank.gd" id="1_teofh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_teofh"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_uofxb"]
-radius = 159.66527
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_fd308"]
-radius = 126.01587
+radius = 100.02
 
 [node name="Crank Screen" type="Node2D"]
 
 [node name="Crank" type="CharacterBody2D" parent="."]
+input_pickable = true
 script = ExtResource("1_teofh")
 speed = 200.0
 
@@ -23,15 +19,13 @@ shape = SubResource("CircleShape2D_teofh")
 [node name="Sprite2D" type="Sprite2D" parent="Crank"]
 texture = ExtResource("1_e5g61")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-visible = false
+[node name="Area2D" type="Area2D" parent="Crank"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("CircleShape2D_uofxb")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-shape = SubResource("CircleShape2D_fd308")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crank/Area2D"]
+shape = SubResource("CircleShape2D_teofh")
+debug_color = Color(0.801318, 0.26409635, 0.8125065, 0.41960785)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="mouse_entered" from="Crank" to="Crank" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Crank" to="Crank" method="_on_mouse_exited"]
