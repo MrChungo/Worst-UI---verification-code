@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://df6cc4183ocaj"]
+
+[ext_resource type="Script" uid="uid://dabsc6g64mxcj" path="res://acenes/letter.gd" id="1_2hlxg"]
+[ext_resource type="Texture2D" uid="uid://b4klemppldgtw" path="res://icon.svg" id="1_uwb6o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2hlxg"]
+size = Vector2(128, 128)
+
+[node name="letter" type="Node2D"]
+script = ExtResource("1_2hlxg")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_2hlxg")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("1_uwb6o")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
