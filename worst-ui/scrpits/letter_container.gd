@@ -14,5 +14,5 @@ func _process(delta: float) -> void:
 
 
 func click_letter():
-	if Global.isMouseIn == true:
+	if Globals.isMouseIn == true:
 		print("clicked in sprite")

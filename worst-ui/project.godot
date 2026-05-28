@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Worst UI"
-run/main_scene="res://crank_screen.tscn"
+run/main_scene="res://scenes/crank_screen.tscn"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Globals="*res://scrpits/global.gd"
 
 [input]
 

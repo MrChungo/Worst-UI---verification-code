@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://fjrx5prad0ns"]
 
-[ext_resource type="Script" uid="uid://d2rmy7ofnecfh" path="res://breaker_buttons_control.gd" id="1_y0pix"]
+[ext_resource type="Script" uid="uid://d2rmy7ofnecfh" path="res://scrpits/breaker_buttons_control.gd" id="1_fk0of"]
 
 [node name="BreakerScreen" type="Node2D"]
 
@@ -13,7 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("1_y0pix")
+script = ExtResource("1_fk0of")
 
 [node name="GridContainer" type="GridContainer" parent="BreakerButtonsControl"]
 layout_mode = 1
