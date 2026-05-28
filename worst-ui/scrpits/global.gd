@@ -1,3 +1,4 @@
 extends Node
 
-var isMouseIn: bool = false
+
+var ItemMouseIsHoveringOver:Node2D = null
