@@ -11,7 +11,7 @@ var shortestDistanceToMouse:Vector2
 
 @onready var target_position:Vector2 = get_global_mouse_position()
 
-var movement_tween = Tween.new()
+var movement_tween = create_tween()
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
