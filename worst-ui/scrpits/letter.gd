@@ -12,10 +12,10 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_mouse_shape_entered(shape_idx: int) -> void:
-	Globals.isMouseIn = true 
+	Globals.ItemMouseIsHoveringOver = self 
 	print('in')
 
 
 func _on_area_2d_mouse_shape_exited(shape_idx: int) -> void:
-	Globals.isMouseIn = false
+	Globals.ItemMouseIsHoveringOver = null
 	print("out") 
