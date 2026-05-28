@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c38msacpifl3f"]
+
+[node name="GlobalTime" type="Node"]
+
+[node name="1sTimer" type="Timer" parent="."]
+autostart = true
+ignore_time_scale = true
+
+[node name="2sTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+ignore_time_scale = true
+
+[node name="5sTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+ignore_time_scale = true
+
+[node name="10sTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+ignore_time_scale = true

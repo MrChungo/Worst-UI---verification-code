@@ -5,7 +5,7 @@ const BUTTON_SCENE = preload("uid://cfmwgluma2am2") #"res://textured_button.tscn
 var buttons:Array = []
 
 func _ready() -> void:
-	createButtons(6,4)
+	createButtons(4,4)
 
 func createButtons(columns, rows) -> void:
 	$GridContainer.columns = columns

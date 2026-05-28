@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://fjrx5prad0ns"]
+[gd_scene load_steps=3 format=3 uid="uid://fjrx5prad0ns"]
 
 [ext_resource type="Script" uid="uid://d2rmy7ofnecfh" path="res://scrpits/breaker_buttons_control.gd" id="1_fk0of"]
+[ext_resource type="Script" uid="uid://dqwj5fty1bvjn" path="res://scrpits/breaker_screen.gd" id="1_trte7"]
 
 [node name="BreakerScreen" type="Node2D"]
+script = ExtResource("1_trte7")
 
 [node name="BreakerButtonsControl" type="Control" parent="."]
 layout_mode = 3
@@ -25,3 +27,4 @@ grow_vertical = 2
 columns = 3
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(5, 5)
