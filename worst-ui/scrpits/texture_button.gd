@@ -2,6 +2,7 @@
 extends TextureButton
 class_name TexturedButton
 
+
 var button_scale:float = 1.0
 
 
