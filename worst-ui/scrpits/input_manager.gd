@@ -12,9 +12,3 @@ func _input(event: InputEvent) -> void:
 			print(event.position)
 			leftMouseButtonClicked.emit()
 # Called when the node enters the scene tree for the first time.
-"""func _input(event):
-
-   # Mouse in viewport coordinates
-	if event is InputEventMouseButton:
-		leftmousebuttonclicked.emit(get_global_mouse_position())
-		print("Mouse Click/Unclick at: ", event.position)"""
