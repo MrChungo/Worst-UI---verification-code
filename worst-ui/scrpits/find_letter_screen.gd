@@ -14,15 +14,23 @@ var screen_height: int = int(screen_size.y)
 
 
 func _ready() -> void:
-	spawn_letters(8)
+	$"..".connect("enable_letters",enable_letters)
+	$"..".connect("disable_letters",disable_letters)
+	spawn_letters(len(target_password))
 
 func spawn_letters(letter_quantity: int) -> void:
 	for letter in range(letter_quantity):
-		_spawn_letter()
+		var letter_symbol = target_password[letter]
+		_spawn_letter(letter_symbol)
 
-func _spawn_letter() -> void:
+func _spawn_letter(letter_symbol:String) -> void:
 	var letter = LETTER_SCENE.instantiate()
 	$"letter container".add_child(letter)
+	
+	await get_tree().process_frame
+	letter.letter_found.connect(letter_found)
+	letter.get_node("TexturedButton").get_node("RichTextLabel").text = letter_symbol
+	
 	position_letter(letter)
 	
 
@@ -75,3 +83,17 @@ func get_random_pos(letter_size) -> Vector2:
 	var x = randf_range(-x_margin, x_margin) 
 	var y = randf_range(-y_margin, y_margin)
 	return Vector2(x, y)
+
+
+func letter_found(letter):
+	current_password += letter.get_node("TexturedButton").get_node("RichTextLabel").text
+	letters_on_screen.erase(letter)
+	letter.queue_free()
+
+func enable_letters():
+	for letter in letters_on_screen:
+		letter.get_node("TexturedButton").disabled = false
+
+func disable_letters():
+	for letter in letters_on_screen:
+		letter.get_node("TexturedButton").disabled = true
