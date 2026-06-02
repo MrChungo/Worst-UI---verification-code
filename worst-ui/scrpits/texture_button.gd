@@ -1,4 +1,3 @@
-@tool
 extends TextureButton
 class_name TexturedButton
 
@@ -21,6 +20,7 @@ func set_pivot() -> void:
 
 
 func _on_mouse_entered() -> void:
+	set_pivot()
 	if !disabled:
 		create_tween().tween_property(self, "scale", Vector2(button_scale*1.15,button_scale*1.15),0.1)
 func _on_mouse_exited() -> void:

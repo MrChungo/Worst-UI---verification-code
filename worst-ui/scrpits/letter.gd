@@ -1,21 +1,12 @@
 extends Node2D
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
-func _on_area_2d_mouse_shape_entered(shape_idx: int) -> void:
+func _on_area_2d_mouse_shape_entered() -> void:
 	Globals.ItemMouseIsHoveringOver = self 
 	print('in')
 
 
-func _on_area_2d_mouse_shape_exited(shape_idx: int) -> void:
+
+func _on_area_2d_mouse_shape_exited() -> void:
 	Globals.ItemMouseIsHoveringOver = null
 	print("out") 

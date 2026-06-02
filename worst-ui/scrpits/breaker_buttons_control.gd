@@ -4,7 +4,7 @@ extends Control
 
 signal button_pressed
 
-const BUTTON_SCENE = preload("uid://cfmwgluma2am2") #"res://textured_button.tscn"
+const BUTTON_SCENE = preload("uid://lvr3e27t7eln") #"res://scenes/Breaker_Button.tscn"
 
 var buttons:Array = []
 
@@ -22,6 +22,7 @@ func createButton() -> void:
 	var button = BUTTON_SCENE.instantiate()
 	buttons[-1].append(button)
 	button.connect("pressed",on_button_pressed)
+	
 	$GridContainer.add_child(button)
 
 func has_deactivated_row() -> bool:

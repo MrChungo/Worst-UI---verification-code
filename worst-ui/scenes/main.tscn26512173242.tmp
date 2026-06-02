@@ -14,7 +14,7 @@ script = ExtResource("1_jyhfs")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="ScreenManager" type="Node2D" parent="." node_paths=PackedStringArray("screens")]
+[node name="ScreenManager" type="Node" parent="." node_paths=PackedStringArray("screens")]
 script = ExtResource("2_0wfyh")
 screens = [NodePath("find letter screen"), NodePath("BreakerScreen")]
 
@@ -24,42 +24,16 @@ screens = [NodePath("find letter screen"), NodePath("BreakerScreen")]
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 script = ExtResource("5_tipki")
 
-[node name="Previous Screen" type="TextureButton" parent="UI"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 3
-texture_normal = ExtResource("4_tefeu")
-texture_pressed = ExtResource("5_o6xl0")
-flip_h = true
-script = ExtResource("6_tipki")
-metadata/_custom_type_script = "uid://df3xnl5jo5suk"
-
-[node name="Next Screen" type="TextureButton" parent="UI"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 3
+[node name="TexturedButton" type="TextureButton" parent="UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 texture_normal = ExtResource("4_tefeu")
 texture_pressed = ExtResource("5_o6xl0")
 script = ExtResource("6_tipki")
 metadata/_custom_type_script = "uid://df3xnl5jo5suk"
-
-[connection signal="pressed" from="UI/Previous Screen" to="ScreenManager" method="_on_previous_screen_pressed"]
-[connection signal="pressed" from="UI/Next Screen" to="ScreenManager" method="_on_next_screen_pressed"]
