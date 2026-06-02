@@ -2,13 +2,13 @@ extends Node2D
 
 signal letter_found(letter:Node2D)
 
-func _on_area_2d_mouse_shape_entered() -> void:
+func _on_area_2d_mouse_shape_entered(shape_idx: int) -> void:
 	Globals.ItemMouseIsHoveringOver = self 
 	print('in')
 
 
 
-func _on_area_2d_mouse_shape_exited() -> void:
+func _on_area_2d_mouse_shape_exited(shape_idx: int) -> void:
 	Globals.ItemMouseIsHoveringOver = null
 	print("out") 
 
