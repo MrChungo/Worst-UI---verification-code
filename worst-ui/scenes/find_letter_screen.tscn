@@ -13,3 +13,5 @@ script = ExtResource("1_4ltta")
 [node name="letter container" type="Node2D" parent="." node_paths=PackedStringArray("inputManager")]
 script = ExtResource("2_kuh0j")
 inputManager = NodePath("../input manager")
+
+[node name="StuffContainer" type="Node2D" parent="."]

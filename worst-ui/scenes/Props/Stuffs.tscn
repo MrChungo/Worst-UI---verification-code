@@ -1,0 +1,82 @@
+[gd_scene load_steps=14 format=3 uid="uid://mjch22nnwkx7"]
+
+[ext_resource type="Texture2D" uid="uid://57sq7i8drm3n" path="res://Assets/Textures/Resurrected RPG 1.1/Plants.png" id="1_2kpla"]
+[ext_resource type="Script" uid="uid://dwtgj3e6mxw6h" path="res://scrpits/orange_tree_v_1.gd" id="1_iyy6x"]
+[ext_resource type="Texture2D" uid="uid://bs1s6vl0n6fot" path="res://Assets/Textures/Resurrected RPG 1.1/PlantShadow.png" id="3_huxq2"]
+[ext_resource type="Texture2D" uid="uid://dfqhtrwmkbmvb" path="res://Assets/Textures/Resurrected RPG 1.1/Props.png" id="3_oanwq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iyy6x"]
+atlas = ExtResource("1_2kpla")
+region = Rect2(550, 642, 119, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdtfn"]
+atlas = ExtResource("3_huxq2")
+region = Rect2(146, 165, 79, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oanwq"]
+atlas = ExtResource("1_2kpla")
+region = Rect2(9, 632, 109, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5o2wq"]
+atlas = ExtResource("3_huxq2")
+region = Rect2(36, 82, 67, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_huxq2"]
+atlas = ExtResource("1_2kpla")
+region = Rect2(724, 749, 38, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipue5"]
+atlas = ExtResource("1_2kpla")
+region = Rect2(945, 637, 50, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqakd"]
+atlas = ExtResource("3_oanwq")
+region = Rect2(16, 16, 32, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtfvt"]
+atlas = ExtResource("3_oanwq")
+region = Rect2(113, 380, 59, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnk2k"]
+atlas = ExtResource("3_oanwq")
+region = Rect2(205, 16, 51, 160)
+
+[node name="Stuff" type="Node2D"]
+script = ExtResource("1_iyy6x")
+
+[node name="OrangeTree V1" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_iyy6x")
+
+[node name="PlantShadow" type="Sprite2D" parent="OrangeTree V1"]
+z_index = -1
+texture = SubResource("AtlasTexture_pdtfn")
+offset = Vector2(4.21, 57.41)
+
+[node name="OrangeTree V2" type="Sprite2D" parent="."]
+visible = false
+texture = SubResource("AtlasTexture_oanwq")
+
+[node name="PlantShadow2" type="Sprite2D" parent="OrangeTree V2"]
+z_index = -1
+texture = SubResource("AtlasTexture_5o2wq")
+offset = Vector2(6.3, 90.475)
+
+[node name="OrangeTreeStump" type="Sprite2D" parent="."]
+visible = false
+texture = SubResource("AtlasTexture_huxq2")
+
+[node name="OrangeBush" type="Sprite2D" parent="."]
+visible = false
+texture = SubResource("AtlasTexture_ipue5")
+
+[node name="Obelisk" type="Sprite2D" parent="."]
+visible = false
+texture = SubResource("AtlasTexture_lqakd")
+
+[node name="Rock" type="Sprite2D" parent="."]
+visible = false
+texture = SubResource("AtlasTexture_rtfvt")
+
+[node name="Statue" type="Sprite2D" parent="."]
+visible = false
+texture = SubResource("AtlasTexture_qnk2k")
