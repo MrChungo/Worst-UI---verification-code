@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://lvr3e27t7eln"]
+
+[ext_resource type="Texture2D" uid="uid://y12biwrbhio8" path="res://Assets/Textures/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_ToggleOff03a.png" id="1_wj2t8"]
+[ext_resource type="Texture2D" uid="uid://cievqsuidqtpn" path="res://Assets/Textures/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_ToggleOn03a.png" id="2_ixwcq"]
+[ext_resource type="Script" uid="uid://df3xnl5jo5suk" path="res://scrpits/texture_button.gd" id="3_hm7no"]
+
+[node name="BreakerButton" type="TextureButton"]
+z_index = 5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(20, 20)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+button_pressed = true
+texture_normal = ExtResource("1_wj2t8")
+texture_pressed = ExtResource("2_ixwcq")
+stretch_mode = 0
+script = ExtResource("3_hm7no")

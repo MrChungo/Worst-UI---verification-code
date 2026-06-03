@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfmwgluma2am2"]
+
+[ext_resource type="Texture2D" uid="uid://y12biwrbhio8" path="res://Assets/Textures/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_ToggleOff03a.png" id="1_0xytv"]
+[ext_resource type="Texture2D" uid="uid://cievqsuidqtpn" path="res://Assets/Textures/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_ToggleOn03a.png" id="2_eef17"]
+[ext_resource type="Script" uid="uid://df3xnl5jo5suk" path="res://scrpits/texture_button.gd" id="2_igwm4"]
+
+[node name="TextureButton" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+pivot_offset = Vector2(20, 20)
+toggle_mode = true
+button_pressed = true
+texture_normal = ExtResource("1_0xytv")
+texture_pressed = ExtResource("2_eef17")
+script = ExtResource("2_igwm4")

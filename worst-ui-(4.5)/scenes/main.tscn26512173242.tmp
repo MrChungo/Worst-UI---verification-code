@@ -1,0 +1,39 @@
+[gd_scene load_steps=9 format=3 uid="uid://dxqjphmhl00oc"]
+
+[ext_resource type="Script" uid="uid://bac28r2d1h1go" path="res://scrpits/main.gd" id="1_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://fjrx5prad0ns" path="res://scenes/breaker_screen.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://dlsrj76jqh4td" path="res://scrpits/screen_manager.gd" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://wk7lluxt0e20" path="res://scenes/find_letter_screen.tscn" id="3_sugp2"]
+[ext_resource type="Texture2D" uid="uid://c5ke8ca741cas" path="res://Assets/Textures/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_IconArrow01a.png" id="4_tefeu"]
+[ext_resource type="Texture2D" uid="uid://6j0jhffh2xb7" path="res://Assets/Textures/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_IconArrow01b.png" id="5_o6xl0"]
+[ext_resource type="Script" uid="uid://b511rcblrgkni" path="res://scrpits/ui.gd" id="5_tipki"]
+[ext_resource type="Script" uid="uid://df3xnl5jo5suk" path="res://scrpits/texture_button.gd" id="6_tipki"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_jyhfs")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="ScreenManager" type="Node" parent="." node_paths=PackedStringArray("screens")]
+script = ExtResource("2_0wfyh")
+screens = [NodePath("find letter screen"), NodePath("BreakerScreen")]
+
+[node name="BreakerScreen" parent="ScreenManager" instance=ExtResource("1_o5qli")]
+
+[node name="find letter screen" parent="ScreenManager" instance=ExtResource("3_sugp2")]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_tipki")
+
+[node name="TexturedButton" type="TextureButton" parent="UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("4_tefeu")
+texture_pressed = ExtResource("5_o6xl0")
+script = ExtResource("6_tipki")
+metadata/_custom_type_script = "uid://df3xnl5jo5suk"

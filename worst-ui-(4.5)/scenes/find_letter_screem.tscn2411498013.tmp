@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://wk7lluxt0e20"]
+
+[ext_resource type="Script" uid="uid://erq47qq882r8" path="res://scrpits/input_magnager.gd" id="1_de7a2"]
+[ext_resource type="PackedScene" uid="uid://df6cc4183ocaj" path="res://acenes/letter.tscn" id="1_il5yb"]
+[ext_resource type="Script" uid="uid://f43qcjmv56ns" path="res://scrpits/letter_container.gd" id="2_fw3hu"]
+
+[node name="find letter screem" type="Node2D"]
+
+[node name="input magnager" type="Node2D" parent="."]
+script = ExtResource("1_de7a2")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="letter container" type="Node2D" parent="." node_paths=PackedStringArray("inputManager")]
+script = ExtResource("2_fw3hu")
+inputManager = NodePath("../input magnager")
+
+[node name="letter" parent="letter container" instance=ExtResource("1_il5yb")]
+
+[node name="letter container2" type="Node2D" parent="." node_paths=PackedStringArray("inputManager")]
+script = ExtResource("2_fw3hu")
+inputManager = NodePath("../input magnager")
+
+[node name="letter" parent="letter container2" instance=ExtResource("1_il5yb")]
